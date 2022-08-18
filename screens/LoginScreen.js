@@ -16,10 +16,10 @@ const LoginScreen = () => {
 
     const navigation = useNavigation();
 
-   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
-                navigation.replace("Home");
+                navigation.replace("Tabs");
             }
         });
         return unsubscribe;
@@ -30,7 +30,6 @@ const LoginScreen = () => {
             .createUserWithEmailAndPassword(email, password)
             .then((userCredentials) => {
                 const user = userCredentials.user;
-                console.log("Registered with:", user.email);
             })
             .catch((error) => alert(error.message));
     };
@@ -40,13 +39,24 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword(email, password)
             .then((userCredentials) => {
                 const user = userCredentials.user;
-                console.log("Logged in with:", user.email);
             })
             .catch((error) => alert(error.message));
     };
 
     return (
         <KeyboardAvoidingView style={styles.container} behavior="padding">
+
+            <View>
+                <View style={{}} ></View>
+                <Text style={{
+                    color: "#da9100",
+                    fontSize: 30,
+                    fontFamily: "Cochin",
+                    fontWeight: "bold",
+                    marginBottom: 35,
+                    padding: 15,
+                }}>Test Your Quran!</Text>
+            </View>
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Email"
