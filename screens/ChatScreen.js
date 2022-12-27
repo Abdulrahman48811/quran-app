@@ -32,7 +32,7 @@ const ChatScreen = ({ navigation }) => {
         onChangeText={(text) => setInput(text)}
         onSubmitEditing={createChat}
       />
-      <Button color="black" onPress={createChat} title="Create a new Chat" />
+      <Button color="black" onPress={createChat} title="Welcome to the Chat" />
     </View>
   );
 };
