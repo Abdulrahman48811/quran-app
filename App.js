@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import ChatScreen from './screens/ChatScreen';
 import Tabs from './navigation/tabs';
+import { TailwindProvider } from 'tailwindcss-react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,14 +15,15 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <TailwindProvider>
     <NavigationContainer>
     <Stack.Navigator>      
       <Stack.Screen name="Tabs" component={Tabs}  options={{headerShown: false}}/>
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
       <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   </NavigationContainer>
-
+  </TailwindProvider>
 
   );
 }
