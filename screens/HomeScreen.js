@@ -96,7 +96,7 @@ const HomeScreen = () => {
         <Text style={styles.buttonText}>Sign out</Text>
       </TouchableOpacity>
       <Text>{data}</Text>
-      <Text>{surah} + {ayahSeven.text} {ayahSeven.number}</Text>
+      <Text>{surah} + {ayahSeven.text} + {ayahSeven.number}</Text>
     </View>
   );
 };
