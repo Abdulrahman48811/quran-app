@@ -20,7 +20,7 @@ export default function App() {
     <Stack.Navigator>      
       <Stack.Screen name="Tabs" component={Tabs}  options={{headerShown: false}}/>
       <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home" component={HomeScreen}/>
     </Stack.Navigator>
   </NavigationContainer>
   </TailwindProvider>
