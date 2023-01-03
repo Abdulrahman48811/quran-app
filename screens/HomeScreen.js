@@ -68,35 +68,37 @@ const HomeScreen = () => {
     getData();
   }, []);
 
-  let surah =
-    ayahs[0].text +
-    ayahs[0].number +
-    "  " +
-    ayahs[1].text +
-    ayahs[1].number +
-    " " +
-    ayahs[2].text +
-    ayahs[2].number +
-    "" +
-    ayahs[3].text +
-    ayahs[3].number +
-    " " +
-    ayahs[4].text +
-    ayahs[4].number +
-    " " +
-    ayahs[5].text +
-    ayahs[5].number
-    " " +
-    ayahs[6].text +
-    ayahs[6].number;
+  // let surah =
+  //   ayahs[0].text +
+  //   ayahs[0].number +
+  //   "  " +
+  //   ayahs[1].text +
+  //   ayahs[1].number +
+  //   " " +
+  //   ayahs[2].text +
+  //   ayahs[2].number +
+  //   "" +
+  //   ayahs[3].text +
+  //   ayahs[3].number +
+  //   " " +
+  //   ayahs[4].text +
+  //   ayahs[4].number +
+  //   " " +
+  //   ayahs[5].text +
+  //   ayahs[5].number
+  //   " " +
+  //   ayahs[6].text +
+  //   ayahs[6].number;
   return (
     <View style={styles.container}>
-      <Text>Email: {auth.currentUser?.email}</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Sign out</Text>
+      <Text style={styles.buttonText}>{auth.currentUser?.email.charAt(0).toUpperCase()}</Text>
       </TouchableOpacity>
+      {/* <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+        <Text style={styles.buttonText}>Sign out</Text>
+      </TouchableOpacity> */}
       <Text>{data}</Text>
-      <Text>{surah} + {ayahSeven.text} + {ayahSeven.number}</Text>
+      {/* <Text>{surah} + {ayahSeven.text} + {ayahSeven.number}</Text> */}
     </View>
   );
 };
@@ -111,10 +113,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#da9100",
-    width: "20%",
+    width: "7%",
     padding: 4,
-    borderRadius: 10,
+    borderRadius: 100,
     alignItems: "center",
+    right: 10,
+    top: 1,
   },
   buttonText: {
     color: "white",
