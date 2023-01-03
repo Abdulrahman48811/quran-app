@@ -12,9 +12,8 @@ import {
 import { useTailwind } from "tailwind-rn";
 import { auth } from "../firebase";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TailwindProvider } from 'tailwindcss-react-native';
-import { Dimensions } from 'react-native';
-
+import { TailwindProvider } from "tailwindcss-react-native";
+import { Dimensions } from "react-native";
 
 const LoginScreen = () => {
   const tw = useTailwind();
@@ -52,12 +51,15 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-       <TailwindProvider>
-       <SafeAreaView>
-      <View>
-        <Image style={styles.image} source={require("../assets/logo.png")} />
-      </View>
-      </SafeAreaView>
+      <TailwindProvider>
+        <SafeAreaView>
+          <View>
+            <Image
+              style={styles.image}
+              source={require("../assets/logo.png")}
+            />
+          </View>
+        </SafeAreaView>
       </TailwindProvider>
       <View>
         <View style={{}}></View>
@@ -71,7 +73,7 @@ const LoginScreen = () => {
             padding: 15,
           }}
         >
-          Welcome To Quran Chat!
+          <Text style={{color: "#4C4646",}}>Welcome To </Text>Quran Chat<Text style={{color: "#4C4646",}}>!</Text>
         </Text>
       </View>
       <View style={styles.inputContainer}>
@@ -101,6 +103,38 @@ const LoginScreen = () => {
           <Text style={styles.buttonOutlineText}>Register</Text>
         </TouchableOpacity>
       </View>
+      <View>
+        <Text
+          style={{
+            marginTop: 8,
+          }}
+        >
+          Don't have an account?
+          <Text
+            style={{
+              color: "#da9100",
+            }}
+          >
+            {" "}
+            Click Register
+          </Text>
+        </Text>
+      </View>
+
+      <View>
+        <Text
+          style={{
+            color: "#da9100",
+            fontSize: 13,
+            fontFamily: "Arial",
+            paddingTop: 250,
+            // marginBottom: 35,
+            padding: 15,
+          }}
+        >
+          San Diego, CA
+        </Text>
+      </View>
     </KeyboardAvoidingView>
   );
 };
@@ -114,9 +148,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   image: {
-    marginTop: -200,
-    marginBottom: 60,
-    width: 160, height: 160,
+    // marginTop: -0,
+    // marginBottom: 1,
+    width: 160,
+    height: 160,
   },
 
   inputContainer: {
