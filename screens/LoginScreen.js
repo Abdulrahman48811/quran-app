@@ -12,11 +12,8 @@ import {
 import { useTailwind } from "tailwind-rn";
 import { auth } from "../firebase";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { TailwindProvider } from "tailwindcss-react-native";
-import { Dimensions } from "react-native";
 
 const LoginScreen = () => {
-  const tw = useTailwind();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -51,16 +48,11 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
-      <TailwindProvider>
-        <SafeAreaView>
-          <View>
-            <Image
-              style={styles.image}
-              source={require("../assets/logo.png")}
-            />
-          </View>
-        </SafeAreaView>
-      </TailwindProvider>
+      <SafeAreaView>
+        <View>
+          <Image style={styles.image} source={require("../assets/logo.png")} />
+        </View>
+      </SafeAreaView>
       <View>
         <View style={{}}></View>
         <Text
@@ -73,7 +65,8 @@ const LoginScreen = () => {
             padding: 15,
           }}
         >
-          <Text style={{color: "#4C4646",}}>Welcome To </Text>Quran Chat<Text style={{color: "#4C4646",}}>!</Text>
+          <Text style={{ color: "#4C4646" }}>Welcome To </Text>Quran Chat
+          <Text style={{ color: "#4C4646" }}>!</Text>
         </Text>
       </View>
       <View style={styles.inputContainer}>
