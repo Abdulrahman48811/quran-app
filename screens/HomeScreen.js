@@ -4,7 +4,7 @@ import { auth } from "../firebase";
 import { useNavigation } from "@react-navigation/core";
 import { ActivityIndicator } from "react-native";
 import { useEffect, useState } from "react";
-
+import { TailwindProvider } from "tailwindcss-react-native";
 const HomeScreen = () => {
   const navigation = useNavigation();
   const handleSignOut = () => {
@@ -99,7 +99,11 @@ const HomeScreen = () => {
       </TouchableOpacity> */}
       <Text>{data}</Text>
       {/* <Text>{surah} + {ayahSeven.text} + {ayahSeven.number}</Text> */}
+      <TailwindProvider>
+        <Text className="text-[#3c6072] font-bold text-2xl">hi</Text>
+      </TailwindProvider>
     </View>
+    
   );
 };
 
